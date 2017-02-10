@@ -1,0 +1,19 @@
+{
+  "manifest_version": 2,
+  "name": "Emoji is evil",
+  "version": "1.1",
+
+  "content_scripts": [
+    {
+      "matches": ["https://vk.com/im*"],
+      "js": ["content.js"]
+    }
+  ],
+
+  "browser_action": {
+    "default_icon": {
+      "16": "icon.png"
+    },
+    "default_title": "Emoji remover"
+  }
+}
