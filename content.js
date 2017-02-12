@@ -31,15 +31,5 @@ function deleteEmoji(mess) {
   if (URL[URL.length - 1] !== 'm') { // When we in vk.com/im, only if dialog opened this will work
 
     var timerId = setInterval(deleter, 1000);
-
-    chrome.extension.onMessage.addListener(function (request, sender, sendResponse) {
-      if (request.type === 'button-triggered' && request.data === 'disable') {
-        alert('lol');
-        clearInterval(timerId);
-      } else {
-        alert('kek');
-        timerId = setInterval(deleter, 1000);
-      }
-    });
   }
 }
