@@ -19,17 +19,14 @@ function deleteEmoji(mess) {
 // Main block. Above only definitions.
 {
   function deleter() {
-    const messages = document.querySelectorAll('div.im-mess--text'); // all messages
-    // have this class
-
     const emojiBar = document.querySelector('.im-chat-input--smile-wrap'); // it's a bar
     emojiBar ? emojiBar.remove() : {}; // with smiles
 
-    messages.forEach((message) => deleteEmoji(message));
+    const messages = document.querySelectorAll('div.im-mess--text'); // all messages
+    // have this class
+
+    messages ? messages.forEach((message) => deleteEmoji(message)) : {};
   }
 
-  if (URL[URL.length - 1] !== 'm') { // When we in vk.com/im, only if dialog opened this will work
-
-    var timerId = setInterval(deleter, 1000);
-  }
+  var timerId = setInterval(deleter, 1000);
 }
